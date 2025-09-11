@@ -230,6 +230,7 @@ def play_lotto():
     else:
         print("სამწუხაროდ ვერ მოიგეთ.")
 
+    # ლოგში ჩაწერა
     logging.info(
         f"კომპიუტერი: {computer_numbers} --- მოთამაშე: {player_numbers} | "
         f"დამთხვევა: {matches}/6 | {result_text} | მოგება: {int(prize)} ლარი"
