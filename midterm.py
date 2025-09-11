@@ -220,7 +220,6 @@ def play_lotto():
     matches = len(set(player_numbers) & set(computer_numbers))
     prize, result_text = calculate_prize(matches)
 
-
     print("\n--- შედეგები ---")
     print(f"კომპიუტერის რიცხვები: {computer_numbers}")
     print(f"თქვენი რიცხვები:      {player_numbers}")
@@ -231,7 +230,6 @@ def play_lotto():
     else:
         print("სამწუხაროდ ვერ მოიგეთ.")
 
-    # ლოგში ჩაწერა
     logging.info(
         f"კომპიუტერი: {computer_numbers} --- მოთამაშე: {player_numbers} | "
         f"დამთხვევა: {matches}/6 | {result_text} | მოგება: {int(prize)} ლარი"
@@ -241,13 +239,14 @@ def calculate_prize(matches):
     if matches == 6:
         return jackpot, "JACKPOT"
     elif matches == 5:
-        return jackpot * 0.6,
+        return jackpot * 0.6, "5 დამთხვევა"
     elif matches == 4:
-        return jackpot * 0.4,
+        return jackpot * 0.4, "4 დამთხვევა"
     elif matches == 3:
-        return jackpot * 0.2,
+        return jackpot * 0.2, "3 დამთხვევა"
     else:
-        return 0, 
+        return 0, "ძალიან ცოტა დამთხვევა"
+
 play_lotto()
 
 #5
